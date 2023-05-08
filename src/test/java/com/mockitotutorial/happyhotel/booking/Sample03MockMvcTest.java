@@ -29,7 +29,8 @@ public class Sample03MockMvcTest {
 			.andDo(print())
 		
 		// then
-			.andExpect(status().isOk())
-			.andExpect(content().string("Greetings from The Happy Hotel. We've got enough beds for 10 guests!"));
+			.andExpectAll(
+					status().isOk(),
+					content().string("Greetings from The Happy Hotel. We've got enough beds for 10 guests!"));
 	}
 }
